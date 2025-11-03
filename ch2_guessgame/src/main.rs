@@ -8,7 +8,7 @@ fn main (){
 
     loop{
         println!("Please input your guess");
-        let mut guess = String::new();  // string::new() -> a function that returns the new instance of string 
+        let mut guess =  String::new();  // string::new() -> a function that returns the new instance of string 
         io::stdin()
             .read_line(&mut guess)
             .expect("Failed to read the line ");
