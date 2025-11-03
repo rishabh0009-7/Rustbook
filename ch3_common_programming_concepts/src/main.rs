@@ -149,24 +149,105 @@
 // }
 
 
-fn main() {
-    let x = plus_one(5);
+// fn main() {
+//     let x = plus_one(5);
 
-    println!("The value of x is: {x}");
+//     println!("The value of x is: {x}");
+// }
+
+// fn plus_one(x: i32) -> i32 {
+//     x + 1 // expression and  output is 6 
+// }
+
+
+
+// fn main() {
+//     let x = plus_one(5);
+
+//     println!("The value of x is: {x}");
+// }
+
+// fn plus_one(x: i32) -> i32 {
+//     x + 1; //statement and will give error 
+// }
+
+
+
+// control flow 
+// if 
+
+
+// fn main (){
+//     let x :i32 = 6;
+//     if x <10 {
+//         println!("condition was true ");
+//     }else{
+//         println!("condition was false ");
+//     }
+// }
+
+// if-else-if
+// fn main() {
+//     let number = 6;
+
+//     if number % 4 == 0 {
+//         println!("number is divisible by 4");
+//     } else if number % 3 == 0 {
+//         println!("number is divisible by 3");
+//     } else if number % 2 == 0 {
+//         println!("number is divisible by 2");
+//     } else {
+//         println!("number is not divisible by 4, 3, or 2");
+//     }
+// }
+
+// Rust has three kinds of loops: loop, while, and for
+//loop -> The loop keyword tells Rust to execute a block of code over and over again forever or until you explicitly tell it to stop.
+// fn main (){
+//     loop{
+//         println!("again!");
+//     }
+// }
+
+
+fn main (){
+    let mut counter = 0;
+
+    let result = loop{
+        counter+=1;
+
+        if counter == 10{
+            break counter*2 ;
+        }
+    };
+    println!("The result is {result }");
 }
 
-fn plus_one(x: i32) -> i32 {
-    x + 1 // expression output is 6 
+// while 
+// fn main() {
+//     let mut number = 3;
+
+//     while number != 0 {
+//         println!("{number}!");
+
+//         number -= 1;
+//     }
+
+//     println!("LIFTOFF!!!");
+// }
+
+
+
+// for 
+
+fn main (){
+    a :[i32, 5 ]= [1,2,3,4,5];
+    for element in a {
+        println!("the value of a is {element}");
+    }
 }
 
 
 
-fn main() {
-    let x = plus_one(5);
 
-    println!("The value of x is: {x}");
-}
 
-fn plus_one(x: i32) -> i32 {
-    x + 1; //statement and will give error 
-}
