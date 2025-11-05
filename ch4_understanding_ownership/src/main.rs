@@ -172,6 +172,36 @@
     // println!("{r3}");
 
 
+    // string slices 
+
+    fn main (){
+        let s = String::from ("hello world");
+        let hello = &s[0..5];
+        let world = &s[6..11];
+
+
+        let s = String::from("hello");
+
+        let len = s.len();
+
+        let slice = &s[0..len];
+        let slice = &s[..];
+        // both are same 
+
+
+
+        
+    }
+
+
+    
+
+
+
+
+
+
+
 
 
 
