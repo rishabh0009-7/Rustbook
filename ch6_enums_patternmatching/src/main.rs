@@ -73,4 +73,33 @@
 
 
 
+// enum message {
+//     Quit,
+//     Move {x:i32 , y:i32},
+//     Write(String),
+//     ChangeColor(i32, i32,i32),
+// }
+
+
+// option enum --> solves null value concept as in rust there is no null concept 
+
+enum option<T>{
+    None ,
+    Some(T),
+}
+
+fn main (){
+    let some_number = Some(6);
+    let some_char =Some('e');
+
+    let absent_number:option<i32> = None;
+
+}
+
+
+
+
+
+
+
 
