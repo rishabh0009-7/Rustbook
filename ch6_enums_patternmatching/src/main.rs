@@ -83,18 +83,58 @@
 
 // option enum --> solves null value concept as in rust there is no null concept 
 
-enum option<T>{
-    None ,
-    Some(T),
+// enum option<T>{
+//     None ,
+//     Some(T),
+// }
+
+// fn main (){
+//     let some_number = Some(6);
+//     let some_char =Some('e');
+
+//     let absent_number:option<i32> = None;
+
+// }
+
+
+// match
+enum Uststate{
+    Alabama,
+    Alaska,
+
+} 
+
+enum Coin {
+    Penny,
+    Nickel,
+    Dime, 
+    Quarter(Uststate),
 }
 
-fn main (){
-    let some_number = Some(6);
-    let some_char =Some('e');
-
-    let absent_number:option<i32> = None;
+fn value_in_cents(coin:Coin){
+   match coin {
+    Coin::Penny=> 1,    
+    Coin::Nickel=> 1,    
+    Coin::Dime=> 1,    
+    Coin::Quarter(state)=>{
+        println!("state quarter from {state:?}!");
+        25
+    },    
+   }
 
 }
+
+
+    fn plus_one(x: Option<i32>) -> Option<i32> {
+        match x {
+            None => None,
+            Some(i) => Some(i + 1),
+        }
+    }
+
+    let five = Some(5);
+    let six = plus_one(five);
+    let none = plus_one(None);
 
 
 
