@@ -98,43 +98,80 @@
 
 
 // match
+// enum Uststate{
+//     Alabama,
+//     Alaska,
+
+// } 
+
+// enum Coin {
+//     Penny,
+//     Nickel,
+//     Dime, 
+//     Quarter(Uststate),
+// }
+
+// fn value_in_cents(coin:Coin){
+//    match coin {
+//     Coin::Penny=> 1,    
+//     Coin::Nickel=> 1,    
+//     Coin::Dime=> 1,    
+//     Coin::Quarter(state)=>{
+//         println!("state quarter from {state:?}!");
+//         25
+//     },    
+//    }
+
+// }
+
+
+//     fn plus_one(x: Option<i32>) -> Option<i32> {
+//         match x {
+//             None => None,
+//             Some(i) => Some(i + 1),
+//         }
+//     }
+
+//     let five = Some(5);
+//     let six = plus_one(five);
+//     let none = plus_one(None);
+
+
+// if let and let else  can be use instead of a match 
+
 enum Uststate{
     Alabama,
     Alaska,
 
-} 
-
+}
 enum Coin {
     Penny,
     Nickel,
     Dime, 
     Quarter(Uststate),
 }
+// let mut count = 0 ;
+// match coin {
+//     Coin::Quarter(state)=> println!("State quarter from {state:?}!"),
+//     _=>count+=1,
+// }
 
-fn value_in_cents(coin:Coin){
-   match coin {
-    Coin::Penny=> 1,    
-    Coin::Nickel=> 1,    
-    Coin::Dime=> 1,    
-    Coin::Quarter(state)=>{
-        println!("state quarter from {state:?}!");
-        25
-    },    
-   }
 
+let mut count = 0;
+
+if let Coin::Quarter(state) = coin{println!("State quarter from {state:?}!");}
+else{
+    count+=1;
 }
 
 
-    fn plus_one(x: Option<i32>) -> Option<i32> {
-        match x {
-            None => None,
-            Some(i) => Some(i + 1),
-        }
-    }
 
-    let five = Some(5);
-    let six = plus_one(five);
-    let none = plus_one(None);
+
+
+
+
+
+
 
 
 
