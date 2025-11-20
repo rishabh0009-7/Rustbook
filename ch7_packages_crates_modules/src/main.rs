@@ -22,5 +22,15 @@
 
 // }
 
+//paths 
+
+// To show Rust where to find an item in a module tree, we use a path in the same way we use a path when navigating a filesystem. To call a function, we need to know its path.
+
+// A path can take two forms:
+
+// An absolute path is the full path starting from a crate root; for code from an external crate, the absolute path begins with the crate name, and for code from the current crate, it starts with the literal crate.
+//  crate::front_of_house::hosting::add_to_waitlist();
+// A relative path starts from the current module and uses self, super, or an identifier in the current module.
+// front_of_house::hosting::add_to_waitlist();
 
 
