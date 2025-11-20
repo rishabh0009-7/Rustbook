@@ -34,3 +34,38 @@
 // front_of_house::hosting::add_to_waitlist();
 
 
+
+// mod front_of_house {
+//     mod hosting {
+//         fn add_to_waitlist() {}
+//     }
+// }
+
+// pub fn eat_at_restaurant() {
+//     // Absolute path
+//     crate::front_of_house::hosting::add_to_waitlist();
+
+//     // Relative path
+//     front_of_house::hosting::add_to_waitlist();
+// }
+
+
+//Note :  if we make an enum public, all of its variants are then public.
+// but in struct if we  make struct public but the struct’s fields will still be private we have to make them public sperately
+
+
+
+// On the other hand, when bringing in structs, enums, and other items with use, it’s idiomatic to specify the full path
+
+// use std::collections::HashMap;
+
+// fn main() {
+//     let mut map = HashMap::new();
+//     map.insert(1, 2);
+// }
+
+
+// If we want to bring all public items defined in a path into scope, we can specify that path followed by the * glob operator:
+
+
+use std::collections::*;
