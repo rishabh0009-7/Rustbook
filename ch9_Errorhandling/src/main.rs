@@ -30,25 +30,49 @@
 //     };
 // }
 
-// Matching on Different Errors
+// // Matching on Different Errors
 
-use std::fs::File;
-use std::io::ErrorKind;
+// use std::fs::File;
+// use std::io::ErrorKind;
 
 
-fn main (){
+// fn main (){
 
-    let greeting_file_result = File::open("Hello.tsxt");
-    let _greeting_file = match greeting_file_result{
-        Ok(file) => file,
-        Err(error)=> match error.kind(){
-            ErrorKind::NotFound = > match file::create("hello.txt"){
-                Ok(fc) => fc ,
-                Err(e)=> panic!("Problem creating the file :{e:?}"),
-            } , 
-            _ => {
-                panic!("Problem opening the file :{error:?}");
-            }
-        } ,
-    };
-}
+//     let greeting_file_result = File::open("Hello.tsxt");
+//     let _greeting_file = match greeting_file_result{
+//         Ok(file) => file,
+//         Err(error)=> match error.kind(){
+//             ErrorKind::NotFound = > match file::create("hello.txt"){
+//                 Ok(fc) => fc ,
+//                 Err(e)=> panic!("Problem creating the file :{e:?}"),
+//             } , 
+//             _ => {
+//                 panic!("Problem opening the file :{error:?}");
+//             }
+//         } ,
+//     };
+// }
+
+
+// read username from file 
+
+use std::fs::file;
+use std::io::{self, Read};
+ fn read_username ()-> Result<String , io::Error>{
+    let mut username_file = File::open("hello.txt");
+    let mut username = String::new();
+    username_file.read_to_string(&mut username)?; //The ? placed after a Result value is defined to work in almost the same way as the match expressions we defined to handle the Result values 
+    ok(username)
+
+
+ }
+
+ //Note - we’re only allowed to use the ? operator in a function that returns Result, Option, or another type that implements 
+
+
+ //use std::fs::File;
+
+// fn main() {
+//     let greeting_file = File::open("hello.txt")?;
+// } // error aayega 
+
