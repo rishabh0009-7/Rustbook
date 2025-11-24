@@ -64,7 +64,96 @@
 
 
 // String
- 
+
+//empty new string 
+
+// let mut s = String::new();
+
+
+// // string with value 
+// let  s = String::from("Initial contents");
+
+
+// updating a string 
+//push_str method 
+
+    // let mut s = String::from("hello");
+    
+    // s.push_str("bar");
+
+
+    // For combining strings in more complicated ways, we can instead use the format! macro
+
+    // let s1 = String::from("tic");
+    //  let s2 = String::from("tac");
+    // let s3 = String::from("toe");
+
+    // let s = format!("{s1}-{s2}-{s3}"); // tic-tac-toe
+
+
+
+// Indexing into Strings
+// Rust strings don’t support indexing.
+// The answer is that to avoid returning an unexpected value and causing bugs that might not be discovered immediately, Rust doesn’t compile this code at all and prevents misunderstandings early in the development process.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
 
 
 
