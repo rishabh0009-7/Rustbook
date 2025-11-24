@@ -113,6 +113,66 @@ for c in "Зд".chars(){
 
 
 
+// Hashmaps -> key value pair 
+//Creating a New Hash Map
+
+use std::collections::HashMap;
+
+let mut scores = HashMap::new();
+scores.insert(String::from("Blue") , 10 );
+scores.insert(String::from("Yellow") , 50);
+
+// Accessing Values in a Hash Map
+let team_name = String::from("Blue");
+let score = scores.get(&team_name).copied().unwrap_or(0);
+
+// iteration 
+
+for (key,value) in &scores{
+    println!("{key}:{value}");
+
+}
+
+
+// Overwriting a Value
+ use std::collections::HashMap;
+
+    let mut scores = HashMap::new();
+
+     scores.insert(String::from("Blue"), 10 );
+     scores.insert(String::from("Blue"), 25 );
+     println!("{scores:?}"); // 25  
+     //This code will print {"Blue": 25}. The original value of 10 has been overwritten.
+
+    //  Adding a Key and Value Only If a Key Isn’t Present
+    //means if already exist then dont replace but if not replace 
+
+     use std::collections::HashMap;
+
+    let mut scores = HashMap::new();
+    scores.insert(String::from("Blue"), 10);
+
+    scores.entry(String::from("Yellow").or_insert(50));
+    scores.entry(String::from("Blue").or_insert(50));
+
+    // Running the code  will print {"Yellow": 50, "Blue": 10}.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
