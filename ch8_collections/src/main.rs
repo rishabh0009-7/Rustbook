@@ -95,6 +95,21 @@
 // Indexing into Strings
 // Rust strings don’t support indexing.
 // The answer is that to avoid returning an unexpected value and causing bugs that might not be discovered immediately, Rust doesn’t compile this code at all and prevents misunderstandings early in the development process.
+// Indexing into a string is often a bad idea because it’s not clear what the return type of the string-indexing operation should be: a byte value, a character, a grapheme cluster, or a string slice
+
+
+
+// Slicing Strings
+
+let hello = String::from("Здравствуйте");
+let s = &hello[0..4];
+
+// Methods for Iterating Over Strings
+// The best way to operate on pieces of strings is to be explicit about whether you want characters or bytes
+
+for c in "Зд".chars(){
+    println!("{c}");
+}
 
 
 
