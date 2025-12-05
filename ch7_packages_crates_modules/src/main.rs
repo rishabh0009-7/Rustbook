@@ -65,7 +65,7 @@
 // }
 
 
-// If we want to bring all public items defined in a path into scope, we can specify that path followed by the * glob operator:
+// If we want to bring all public items defined in a path into scope, we can specify that path followed by the * global /operator:
 
 
 use std::collections::*;
