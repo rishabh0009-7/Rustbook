@@ -26,28 +26,28 @@
 
 
 
-struct Point <T> {
-    x:T,
-    y:T,
+// struct Point <T> {
+//     x:T,
+//     y:T,
 
-}
-
-
-impl<T>  Point<T> {
-    fn  x (&self)-> &T{
-        &self.x
-
-    }
-
-}
+// }
 
 
+// impl<T>  Point<T> {
+//     fn  x (&self)-> &T{
+//         &self.x
 
-fn main (){
-    let integer = Point{x:5 , y:6};
-    let float = Point {x:3.5 , 7.8};
+//     }
 
-}
+// }
+
+
+
+// fn main (){
+//     let integer = Point{x:5 , y:6};
+//     let float = Point {x:3.5 , 7.8};
+
+// }
 
 
 
@@ -142,12 +142,79 @@ fn main (){
 // }
 
 
-fn main (){
-    let x = 6;
+// fn main (){
+//     let x = 6;
 
-    let r = &x ;
+//     let r = &x ;
 
 
-    println!("the value of r is :{r}");
+//     println!("the value of r is :{r}");
+// }
+
+
+// Generic Lifetimes in Functions
+
+// fn main (){
+//     let string1 = String::from("abcd");
+//     let string2 = "xyz";
+
+//     let result = longest (string1.as_str() , string2);
+//     println!("the longest string is :{result}"); // wil not complile due to lifetime error 
+// }
+
+// fn longest (x:&str , y:&str) ->&str{
+//     if x.len()> y.len(){x} else {y}
+
+// }
+
+
+// fn main (){
+//     let string1 = String::from("abcd");
+//     let string2 = "xyz";
+
+//     let result = longest (string1.as_str() , string2);
+//     println!("the longest string is :{result}");
+// }
+
+// fn longest <'a>(x:&'a str , y:&'a str) ->&'a str{
+//     if x.len()> y.len(){x} else {y}
+
+// }
+
+
+// Lifetime Annotations in Struct 
+// the structs we’ve defined all hold owned types. We can define structs to hold references, but in that case we would need to add a lifetime annotation on every reference in the struct’s definition.
+// agar struct mai ref store karna hai type mai to lifetimes use karna hoga
+
+
+// struct ImportantExcerpt <'a> {
+//     part : &'a str,
+// }
+
+// fn main (){
+//     let novel = String::from("Call me Ishmael. Some years ago...");
+//     let First_sentence = novel.split('.').next().unwrap()
+//     let i = ImportantExcerpt{
+//         part :First_sentence , 
+//     }
+// };
+
+
+// Lifetime Annotations in Method Definitions
+
+struct ImportantExcerpt <'a> {
+    part : &'a str ;
+
 }
 
+
+impl <'a> ImportantExcerpt <'a> {
+    fn level (&self) -> i32 {
+        3
+
+    }
+
+}
+
+
+// The Static Lifetime
