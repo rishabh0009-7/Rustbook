@@ -218,3 +218,6 @@ impl <'a> ImportantExcerpt <'a> {
 
 
 // The Static Lifetime
+//  which denotes that the affected reference can live for the entire duration of the program
+
+let s:&'static str = String::from ("static lifetime ");
