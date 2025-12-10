@@ -164,3 +164,35 @@ mod tests {
 
 // if u want to run the ignored one --> cargo test -- --ignored 
 //If you want to run all tests whether they’re ignored or not, you can run cargo test -- --include-ignored
+
+
+
+// The Rust community thinks about tests in terms of two main categories: unit tests and integration tests
+
+// Unit Tests --> The purpose of unit tests is to test each unit of code in isolation from the rest of the code to quickly pinpoint where code is and isn’t working as expected.
+
+// example 
+
+// #[cfg(test)] -->tells Rust to compile and run the test code only when you run cargo test, not when you run cargo build
+// By using the cfg attribute, Cargo compiles our test code only if we actively run the tests with cargo test. 
+
+pub fn add (left:u64 , right:u64)-> u64{
+    left +right ;
+
+}
+
+#[cfg(test)]
+
+mod tests{
+    use super::*;
+
+    #[test]
+    fn add_two(){
+        let result = add(2,2);
+        assert_eq!(4);
+    }
+}
+
+// Integration Tests
+// In Rust, integration tests are entirely external to your library.
+// We create a tests directory at the top level of our project directory, next to src. Cargo knows to look for integration test files in this directory. We can then make as many test files as we want, and Cargo will compile each of the files as an individual crate.
