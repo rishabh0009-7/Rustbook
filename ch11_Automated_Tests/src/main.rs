@@ -130,3 +130,37 @@ mod tests {
         Guess::new(200);
     }
 }
+
+
+// If you don’t want to run the tests in parallel or if you want more fine-grained control over the number of threads used, you can send the --test-threads flag and the number of threads you want to use to the test binary. Take a look at the following example: cargo test-- --test-threads=1
+
+// If we want to see printed values for passing tests as well, we can tell Rust to also show the output of successful tests with --show-output:  cargo test -- --show-output
+
+// Running a Subset of Tests by Name ->  cargo test one_hundred 
+//Only the test with the name one_hundred ran 
+
+// Filtering to Run Multiple Tests--> cargo test add --> This command ran all tests with add in the name and filtered out the test named one_hundred.
+
+// Ignoring Some Tests Unless Specifically Requested --> Sometimes a few specific tests can be very time-consuming to execute, so you might want to exclude them during most runs of cargo test. using ignore 
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn it_works() {
+        let result = add(2, 2);
+        assert_eq!(result, 4);
+    }
+
+    #[test]
+    #[ignore]
+    fn expensive_test() {
+        // code that takes an hour to run
+    }
+}
+
+
+
+// if u want to run the ignored one --> cargo test -- --ignored 
+//If you want to run all tests whether they’re ignored or not, you can run cargo test -- --include-ignored
