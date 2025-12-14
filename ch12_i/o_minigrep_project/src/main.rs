@@ -3,6 +3,8 @@
 
 
 use std::env;
+use std::fs ;
+
 
 fn main (){
     let args:Vec<String> = env::args().collect(); // cl mai se arg laayega and usko collect kaedenge vector string mai 
@@ -12,4 +14,13 @@ fn main (){
 
     println!("Searching for query :{query}");
     println!("Searching for filepath :{filepath}");
+
+    let contents = fs::read_to_string(filepath)
+        .expect("shoudld have been able to read the file ");
+
+
+    println!("with texts :\n{contents}");
+
+
+
 }
